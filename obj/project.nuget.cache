@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "MyxcgaB4BvA=",
+  "success": true,
+  "projectFilePath": "D:\\API_Products\\API_Products.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DDD\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.11\\microsoft.aspnetcore.openapi.10.0.11.nupkg.sha512",
+    "C:\\Users\\DDD\\.nuget\\packages\\microsoft.openapi\\2.7.5\\microsoft.openapi.2.7.5.nupkg.sha512",
+    "C:\\Users\\DDD\\.nuget\\packages\\scalar.aspnetcore\\2.17.14\\scalar.aspnetcore.2.17.14.nupkg.sha512"
+  ],
+  "logs": []
+}
