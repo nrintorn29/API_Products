@@ -17,7 +17,7 @@ public class ProductsController : ControllerBase
         return Ok(_service.GetAll());
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{id:int}")]
     public IActionResult GetById(int id)
     {
         var product = _service.GetById(id);
@@ -53,7 +53,7 @@ public class ProductsController : ControllerBase
         return Ok(products);
     }
 
-    [HttpPut("{id}")]
+    [HttpPut("{id:int}")]
     public IActionResult Update(int id, Product updated)
     {
         if (_service.GetById(id) == null) 
@@ -65,7 +65,7 @@ public class ProductsController : ControllerBase
         return Ok(_service.Update(id, updated));
     }
 
-    [HttpDelete("{id}")]
+    [HttpDelete("{id:int}")]
     public IActionResult Delete(int id)
     {
         if (!_service.Delete(id))
