@@ -8,13 +8,13 @@ public class ProductService : IProductService
 
     public List<Product> GetAll() => _products;
 
-    public Product?  GetById(int id) => _products.FirstOrDefault(p => p.Id == id);
+    public Product? GetById(int id) => _products.FirstOrDefault(p => p.Id == id);
 
     public bool IsValid(Product product) => !string.IsNullOrWhiteSpace(product.Name) && product.Price > 0;
 
     public Product Create(Product newProduct)
     {
-        newProduct.Id = _products.Count == 0 ? 1 : _products.Max(p => p.Id) +1;
+        newProduct.Id = _products.Count == 0 ? 1 : _products.Max(p => p.Id) + 1;
         _products.Add(newProduct);
 
         return newProduct;
