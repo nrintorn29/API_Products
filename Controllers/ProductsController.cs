@@ -12,7 +12,7 @@ public class ProductsController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetALL()
+    public IActionResult GetAll()
     {
         return Ok(_service.GetAll());
     }
@@ -43,7 +43,7 @@ public class ProductsController : ControllerBase
     public IActionResult Search(string name)
     {
         if (string.IsNullOrWhiteSpace(name))
-            return BadRequest("กรุณาระบุชื้อสินค้า");
+            return BadRequest("กรุณาระบุชื่อสินค้า");
 
         var products = _service.Search(name);
 
