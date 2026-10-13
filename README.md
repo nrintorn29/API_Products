@@ -18,7 +18,7 @@ dotnet run
 ```
 
 เปิดหน้าเอกสาร API ที่ `http://localhost:{PORT}/scalar/v1`
-PORT ดูได้หลักจากรันเสร็จแล้ว ที่ Terminal
+(ดู PORT ได้จากข้อความใน terminal หลังรัน)
 
 ## Endpoints
 
