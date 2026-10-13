@@ -4,6 +4,7 @@ Web API สำหรับจัดการข้อมูลสินค้า
 
 ## วิธีรัน
 
+ก่อนรันครั้งแรก ต้องใช้คำสั่ง dotnet ef database update
 ```bash
 dotnet run
 ```
