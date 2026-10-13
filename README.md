@@ -9,7 +9,8 @@ Web API สำหรับจัดการข้อมูลสินค้า
 dotnet run
 ```
 
-เปิดหน้าเอกสาร API ที่ `http://localhost:5082/scalar/v1`
+เปิดหน้าเอกสาร API ที่ `http://localhost:{PORT}/scalar/v1`
+PORT ดูได้หลักจากรันเสร็จแล้ว ที่ Terminal
 
 ## Endpoints
 
