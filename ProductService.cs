@@ -38,6 +38,7 @@ public class ProductService : IProductService
 
         product.Name = updateProduct.Name;
         product.Price = updateProduct.Price;
+        product.Description = updateProduct.Description;
         _db.SaveChanges();
 
         return product;
