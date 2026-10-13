@@ -1,58 +1,62 @@
+using Microsoft.EntityFrameworkCore;
+
 public class ProductService : IProductService
 {
-    private readonly List<Product> _products = new()
+    private readonly AppDbContext _db;
+
+    public ProductService(AppDbContext db)
     {
-        new Product {Id = 1, Name = "ปากกา", Price = 12},
-        new Product {Id = 2, Name = "สมุด", Price = 45}
-    };
+        _db = db;
+    }
 
-    public List<Product> GetAll() => _products;
+    public List<Product> GetAll() => _db.Products.ToList();
 
-    public Product? GetById(int id) => _products.FirstOrDefault(p => p.Id == id);
+    public Product? GetById(int id) => _db.Products.Find(id);
 
     public bool IsValid(Product product) => !string.IsNullOrWhiteSpace(product.Name) && product.Price > 0;
 
     public Product Create(Product newProduct)
     {
-        newProduct.Id = _products.Count == 0 ? 1 : _products.Max(p => p.Id) + 1;
-        _products.Add(newProduct);
+        newProduct.Id = 0;
+        _db.Products.Add(newProduct);
+        _db.SaveChanges();
 
         return newProduct;
     }
 
     public List<Product> Search(string name)
-    {
-        var products = _products.Where(p => p.Name.Contains(name, StringComparison.OrdinalIgnoreCase)).ToList();
-
-        return products;
-    }
+        => _db.Products
+            .Where(p => EF.Functions.Like(p.Name, $"%{name}%"))
+            .ToList();
 
     public Product? Update(int id, Product updateProduct)
     {
-        var product = GetById(id);
+        var product = _db.Products.Find(id);
 
         if (product == null)
             return null;
 
         product.Name = updateProduct.Name;
         product.Price = updateProduct.Price;
+        _db.SaveChanges();
 
         return product;
     }
 
     public bool Delete(int id)
     {
-        var product = GetById(id);
+        var product = _db.Products.Find(id);
 
         if (product == null)
             return false;
         
-        _products.Remove(product);
+        _db.Products.Remove(product);
+        _db.SaveChanges();
 
         return true;
     }
 
-    public void DeleteAll() => _products.Clear();
+    public void DeleteAll() => _db.Products.ExecuteDelete();
 
-    public List<Product> GetExpensive(decimal minPrice) => _products.Where(p => p.Price >= minPrice).ToList();
+    public List<Product> GetExpensive(decimal minPrice) => _db.Products.Where(p => p.Price >= minPrice).ToList();
 }
