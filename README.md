@@ -4,7 +4,15 @@ Web API สำหรับจัดการข้อมูลสินค้า
 
 ## วิธีรัน
 
-ก่อนรันครั้งแรก ต้องใช้คำสั่ง dotnet ef database update
+ติดตั้งเครื่องมือ EF Core (ครั้งเดียว) แล้วสร้างฐานข้อมูล:
+
+```bash
+dotnet tool install --global dotnet-ef
+dotnet ef database update
+```
+
+จากนั้นรันโปรเจกต์:
+
 ```bash
 dotnet run
 ```
