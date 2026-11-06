@@ -41,11 +41,11 @@ public class ProductsController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<ResponseProductDto>> CreateAsync(CreateProductDto dto, CancellationToken ct)
     {
-        var created = await _service.CreateAsync(dto.toEntity(), ct);
+        var created = await _service.CreateAsync(dto.ToEntity(), ct);
         return CreatedAtRoute(NameGetByIdRoute, new {id = created.Id}, created.ToResponse());
     }
 
-    [HttpPut]
+    [HttpPut("{id:int}")]
     public async Task<ActionResult<ResponseProductDto>> UpdateAsync(int id, UpdateProductDto dto, CancellationToken ct)
     {
         var updated = await _service.UpdateAsync(id, dto.ToEntity(), ct);

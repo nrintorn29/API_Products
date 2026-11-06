@@ -1,6 +1,6 @@
 public static class ProductMappings
 {
-    public static Product toEntity(this CreateProductDto dto) => new()
+    public static Product ToEntity(this CreateProductDto dto) => new()
     {
         Name = dto.Name.Trim(),
         Price = dto.Price,
