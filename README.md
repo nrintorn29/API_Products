@@ -1,9 +1,9 @@
 ## API_Products
 
 webapi จัดการสินค้าหลังบ้าน ด้วยระบบ CRUD โดยใช้ .NET SDK (version 10.0) ประกอบด้วย
--EF Core และรูปแบบ async/await สำหรับรองรับหลาย request
--มีหลายชั้นเพื่อง่ายต่อการพัฒนา Interface, Service, Controller
--ใช้ DTO เพื่อกำหนดขอบเขตของข้อมูล
+- EF Core และรูปแบบ async/await สำหรับรองรับหลาย request
+- มีหลายชั้นเพื่อง่ายต่อการพัฒนา Interface, Service, Controller
+- ใช้ DTO เพื่อกำหนดขอบเขตของข้อมูล
 
 ## RUN
 
