@@ -35,6 +35,6 @@ dotnet run
 |GET|`api/Products/search?name=`|ดูสินค้าตาม {name}|
 |GET|`api/Products/expensive?minPrice=`|ดูสินค้าตาม {ราคา หรือมากกว่า}|
 |POST|`api/Products`|เพิ่มสินค้า|
-|PUT|`api/Products`|แก้ไขสินค้า|
+|PUT|`api/Products/{id}`|แก้ไขสินค้าตาม {id}|
 |DELETE|`api/Products/{id}`|ลบสินค้าตาม {id}|
 |DELETE|`api/Products`|ลบสินค้าทั้งหมด|
