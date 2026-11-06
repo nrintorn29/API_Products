@@ -1,0 +1,6 @@
+@API_Products_HostAddress = http://localhost:5000/scalar/v1
+
+GET {{API_Products_HostAddress}}/scalar/v1/
+Accept: application/json
+
+###
